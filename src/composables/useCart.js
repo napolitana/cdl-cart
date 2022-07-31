@@ -19,7 +19,7 @@ const products = ref([
     quantity: 0,
     total: 0,
     offer: {
-      minQuantity: 3,
+      minQuantity: 2,
       total: 45,
     },
   },
@@ -50,20 +50,20 @@ export default function useCart() {
 
   const addToCart = (product) => {
     const index = cart.items.findIndex((item) => item.id === product.id)
-    if (index > -1) cart.items.push({ ...product, quantity: 1 })
-    else cart.items[index].quantity++
+    if (index > -1) cart.items[index].quantity++
+    else cart.items.push({ ...product, quantity: 1 })
   }
 
   const decreaseQuantity = (id) => {
     const index = cart.items.findIndex((item) => item.id === id)
-    if (cart.items[index].quantity > 0) cart.items[index].quantity--
+    if (cart.items[index].quantity > 1) cart.items[index].quantity--
     else cart.items.splice(index, 1)
   }
 
   // return items in cart with total price per product calculated
   const cartItems = computed(() => {
     return cart.items.map((item) => {
-      const combos = item.quantity / item?.offer?.minQuantity
+      const combos = Math.floor(item.quantity / item?.offer?.minQuantity)
       const units = item.quantity % item?.offer?.minQuantity
 
       return {
