@@ -7,12 +7,12 @@ After initializing the project, I started building all the logic around the cart
 Then I started to create the components and lastly I started to stylizing them. 
 There is a list of things that I would’ve done if I had more time, such as: 
 
-•	Finish stylizing components
-•	Add a library called Dinero to format all currency values (I should’ve prioritize it before styling but I just figured out when it was too late, unfortunately) 
-•	Add unit tests (I didn’t because I wasn’t so sure if I would make it within the deadline, so I opted for letting it out)
-•	Add a library to use icons and make interface more friendly
-•	Make the website responsive
-•	Add WACG practices to make the website fully accessible 
+-	Finish stylizing components
+-	Add a library called Dinero to format all currency values (I should’ve prioritize it before styling but I just figured out when it was too late, unfortunately) 
+-	Add unit tests (I didn’t because I wasn’t so sure if I would make it within the deadline, so I opted for letting it out)
+-	Add a library to use icons and make interface more friendly
+-	Make the website responsive
+-	Add WACG practices to make the website fully accessible 
 
 This template should help get you started developing with Vue 3 in Vite.
 
