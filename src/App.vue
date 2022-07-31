@@ -8,20 +8,45 @@ const { cartOpen, toggleCart, cartTotal } = useCart()
 
 <template>
   <div>
-    <header style="display: flex; justify-content: space-around">
+    <header :class="$style.header">
       <span>Logo</span>
       <div>
         <button @click="toggleCart">Cart</button>
         <span>{{ cartTotal }}</span>
       </div>
     </header>
-    <main>
+    <main :class="$style.main">
       <ProductsList />
     </main>
-    <aside v-if="cartOpen">
+    <aside :class="$style.aside" v-if="cartOpen">
       <CartShopping />
     </aside>
   </div>
 </template>
 
-<style scoped></style>
+<style lang="scss" module>
+.header {
+  position: fixed;
+  top: 0;
+  height: 72px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: white;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.main {
+  height: calc(100vh - 72px);
+  max-width: 1200px;
+  margin: 72px auto 0 auto;
+}
+
+.aside {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 250px;
+}
+</style>
